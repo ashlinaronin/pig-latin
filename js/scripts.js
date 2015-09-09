@@ -60,3 +60,18 @@ var handleArray = function(message) {
     });
     return translatedMessage;
 };
+
+var translate = function(str) {
+
+    // Words starting with vowels
+    str = str.replace(/\b([aeiou][a-z]*)\b/gi, "$1way");
+    console.log("after vowel test, str is " + str);
+
+    // Words containing 'qu'
+    str = str.replace(/\b([bcdfghjklmnpqrstvwxy]*qu)([a-z]*)\b/gi, "$2$1ay");
+    console.log("after qu test, str is " + str);
+
+    // All other words not containing 'qu'
+    str = str.replace(/\b([bcdfghjklmnpqrstvwxy]+)([a-z]*)\b/gi, "$2$1ay");
+    return str;
+};

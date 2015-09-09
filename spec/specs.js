@@ -51,3 +51,16 @@ describe("handleArray", function() {
         expect(handleArray("I can speak Pig Latin")).to.equal("Iway ancay eakspay igPay atinLay");
     });
 });
+
+describe("translate", function() {
+    it("handles multiple word string", function() {
+        expect(translate("I can speak Pig Latin")).to.equal("Iway ancay eakspay igPay atinLay");
+    });
+    it("handles weird stuff", function() {
+        expect(translate("a squeel")).to.equal("away eelsquay");
+    });
+
+    it("tough tough tough", function() {
+        expect(translate("You will never pass this sentence queen squealing squishy acquiescence!!!")).to.equal("ouYay illway evernay asspay isthay entencesay eenquay ealingsquay ishysquay acquiescenceway!!!");
+    });
+});
