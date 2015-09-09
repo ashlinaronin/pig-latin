@@ -47,8 +47,16 @@ var firstVowel = function(word) {
 var handleArray = function(message) {
     var words = message.split(" ");
     var translatedMessage = "";
+    var count = 0;
+
     words.forEach(function(word) {
-        translatedMessage += pigLatin(word) + " ";
+        translatedMessage += pigLatin(word);
+
+        // Add a space if we're not at the end of the sentence
+        if (count !== words.length-1) {
+            translatedMessage += " ";
+        }
+        count++;
     });
     return translatedMessage;
 };

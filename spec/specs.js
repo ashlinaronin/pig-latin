@@ -48,6 +48,6 @@ describe('firstVowel', function() {
 
 describe("handleArray", function() {
     it("handles multiple word string", function() {
-        expect(handleArray("I can speak Pig Latin")).to.equal("Iway ancay eakspay igPay atinLay ");
+        expect(handleArray("I can speak Pig Latin")).to.equal("Iway ancay eakspay igPay atinLay");
     });
 });
