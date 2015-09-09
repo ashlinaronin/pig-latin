@@ -1,26 +1,21 @@
 var pigLatin = function(message) {
     var vowels = ['a', 'e', 'i', 'o', 'u'];
-    var firstChar = message.charAt(0);
     var translatedMessage;
+    var firstVowelIndex = firstVowel(message);
 
 
-    // If first char is a consonant, move it to the end and add "ay"
-    if (vowels.indexOf(firstChar) === -1) {
-
-        // If second char is a consonant...
-        if (vowels.indexOf(message.charAt(1)) === -1) {
-            translatedMessage = message.slice(2) + message.slice(0, 2) + "ay";
-        } else {
-            translatedMessage = message.slice(1) + firstChar + "ay";
-        }
-
-    }  else {
-        // If first char is not a consonant, add "ay"
+    /* If the word starts with a vowel, just add "ay".
+    ** If it starts with any number of consonants, add them to the end + "ay".*/
+    if (firstVowelIndex == 0) {
         translatedMessage = message + "ay";
+    } else {
+        translatedMessage = message.slice(firstVowelIndex) +
+            message.slice(0, firstVowelIndex) + "ay";
     }
-
     return translatedMessage;
 };
+
+
 
 var firstVowel = function(message) {
     var vowels = ['a', 'e', 'i', 'o', 'u'];
