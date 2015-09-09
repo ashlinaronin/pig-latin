@@ -24,4 +24,8 @@ describe('firstVowel', function() {
     it("handles a three-letter word", function() {
         expect(firstVowel("she")).to.equal(2);
     });
+
+    it("handles a no-vowel word", function() {
+        expect(firstVowel("thyrmldn")).to.equal(-1);
+    });
 });
