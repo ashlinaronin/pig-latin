@@ -1,5 +1,5 @@
-describe('pig-latin', function() {
+describe('pigLatin', function() {
   it("handles words that start with a vowel", function() {
-    expect(format("art")).to.equal("artay");
+    expect(pigLatin("art")).to.equal("artay");
   });
 });
